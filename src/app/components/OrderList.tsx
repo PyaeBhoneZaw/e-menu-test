@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 
 interface Order {
+    ordernumber: number;
     name: string;
     quantity: number;
     status: string;
@@ -10,7 +11,8 @@ interface Order {
 
 const OrderList: React.FC<{ orders: Order[] }> = ({ orders }) => {
     return (
-        <div className="container mx-auto p-4 min-h-screen">
+
+        <div className="container mx-auto p-4 min-h-screen md:min-h-0">
 
 
             <div className="grid grid-cols-1 gap-4">
