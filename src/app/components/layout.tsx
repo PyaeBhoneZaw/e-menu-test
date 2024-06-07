@@ -2,6 +2,7 @@
 import React, { ReactNode } from 'react';
 import UpperNavBar from './UpperNavBar';
 import LowerNavBar from './LowerNavBar';
+import { CartProvider } from '../contexts/CartContext';
 
 interface LayoutProps {
     children: ReactNode;
