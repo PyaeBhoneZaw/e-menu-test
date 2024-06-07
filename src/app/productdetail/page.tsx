@@ -3,6 +3,9 @@ import Image from 'next/image';
 import { useState } from 'react';
 import Layout from '../components/layout';
 import { useCart } from '../contexts/CartContext';
+import Product from '../components/Product';
+import { Button } from '@/components/ui/button';
+
 
 export default function ProductPage() {
     const [quantity, setQuantity] = useState(1);
@@ -26,10 +29,11 @@ export default function ProductPage() {
         }
     };
 
+    // const { addToCart } = useCart();
+
     // const handleAddToCart = (quantity: number) => {
     //     setCartItemCount(cartItemCount + quantity);
     // };
-    const { addToCart } = useCart();
 
     return (
         <Layout>
@@ -122,19 +126,20 @@ export default function ProductPage() {
                             </div>
 
                             <div className="flex mx-2 justify-center lg:justify-normal md:justify-normal text-2xl">
-                                <span className='mr-5'>Total: </span>
+                                <span className=' mr-8'>Total: </span>
                                 {price.toFixed(2)}
                             </div>
 
                             <div className="my-6 text-center md:text-left lg:text-left">
-                                <a href="#" onClick={addToCart} className="mx-2 inline-block rounded-lg bg-cyan-500 px-4 py-2 hover:bg-cyan-600">Back</a>
-                                <a href="#" className="mx-2 inline-block rounded-lg bg-cyan-500 px-4 py-2 hover:bg-cyan-600">Add to Cart</a>
+                                {/* <a href="#" className="mx-2 inline-block rounded-lg bg-cyan-500 px-4 py-2 hover:bg-cyan-600">Back</a> */}
+                                <Button className='mx-2 inline-block rounded-lg bg-cyan-500 px-4 py-2 hover:bg-cyan-600'>Back</Button>
+                                <Product />
                             </div>
                         </div>
                     </div>
                 </main>
             </div>
-        </Layout>
+        </Layout >
 
     );
 }
